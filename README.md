@@ -1,5 +1,34 @@
-## BINGO Game
-### Created by Vittoria Erdem
+# **BINGO Game**
+#### Created by Vittoria Erdem
+<br>
 
-### Objective
-##### Starboard list quarterdeck black jack lookout run a rig brig coxswain bounty spyglass. Run a shot across the bow interloper landlubber or just lubber heave down blow the man down ballast man-of-war transom handsomely Chain Shot.  
+### **Objective**
+* Create an interactive bingo game that allows the player to click on the square once the number is called. After thre player gets 5 boxes in a row they can call B-I-N-G-O!
+
+<br>
+
+### **Technology used:**
+* HTML
+* CSS
+* JavaScript
+
+<br>
+
+### **Wireframes:**
+![bingo-wireframe](imgs/bingo-wireframe1.png)
+<br>
+
+### **User Stories:**
+##### Blah
+
+<br>
+
+### **Features List:**
+* Draws a number
+* Shows what numbers have been previously drawn
+* JavaScript
+
+
+
+### **Stretch Goals:**
+* Automate - Draw a new number after a few seconds

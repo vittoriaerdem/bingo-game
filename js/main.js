@@ -10,8 +10,9 @@ var bingoNumber = [1,2,3,4,5,6,7,8,9,10,
 var drawnNumber = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
 console.log(drawnNumber);
 
-const $skills = $('#skills'); // this is the list
-const addSkill = $('#add-button') // this is the button
+const $drawnNumbers = $('#skills'); // this is the list
+const nextNumber = $('#next-number') // this is the button
+const newGame = $('#new-game') // this is the button
 const skillInput = $('#skill-input')
 console.log(addSkill)
 console.log($skills)
