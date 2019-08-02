@@ -7,8 +7,11 @@ body {
   display: grid;
   align-content: center;
   justify-content: center;
- } 
+ }
 
+h2 {
+  font-size: 10vh;
+}
 .board {
   font-size: 3vh;
   display: grid; 
@@ -77,4 +80,11 @@ body {
   height: 120px;
   width: 120px;
   margin: 0px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  text-align: left;
+  display: inline-block;
 }
