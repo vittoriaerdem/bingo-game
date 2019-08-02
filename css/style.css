@@ -1,20 +1,80 @@
 * {
-    box-sizing: border-box;
-  }
-
-h1 {
-    font-size: 20px;
+  box-sizing: border-box;
 }
 
 body {
-   display: grid;
-   grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: repeat(5, 1fr);
-   height: 100vh;
-   background-color: red;
+  font-family: 'Boogaloo', cursive;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+ } 
+
+.board {
+  font-size: 3vh;
+  display: grid; 
+  align-content: center;
+  justify-content: center;
 }
 
-div {
-    font-size: 20px;
+#squareB, #square1, #square6, #square11, #square16, #square21 {
+  border: 2px solid black;
+  display: grid; 
+  align-content: center;
+  justify-content: center;
+  height: 120px;
+  grid-row: 0 / 1;
+  grid-column: 0 / 1;
 }
 
+#squareI, #square2, #square7, #square12, #square17, #square22{
+  font-size: 3vh;
+  border: 2px solid black;
+  display: grid; 
+  align-content: center;
+  justify-content: center;
+  height: 120px;
+  grid-row: 0 / 1;
+  grid-column: 0 / 1;
+}
+
+#squareN, #square3, #square8, #square13, #square18, #square23{
+  font-size: 3vh;
+  border: 2px solid black;
+  display: grid; 
+  align-content: center;
+  justify-content: center;
+  height: 120px;
+  grid-row: 0 / 1;
+  grid-column: 3 / 4;
+
+}
+
+#squareG, #square4, #square9, #square14, #square19, #square24{
+  font-size: 3vh;
+  border: 2px solid black;
+  display: grid; 
+  align-content: center;
+  justify-content: center;
+  height: 120px;
+  grid-row: 0 / 1;
+  grid-column: 4 / 5;
+}
+
+#squareO, #square5, #square10, #square15, #square20, #square25{
+  font-size: 3vh;
+  border: 2px solid black;
+  display: grid; 
+  align-content: center;
+  justify-content: center;
+  height: 120px;
+  grid-row: 0 / 1;
+  grid-column: 5 / 6;
+}
+
+#squareB, #squareI, #squareN, #squareG, #squareO{
+  background-color: #2E758B;
+  font-size: 8vh;
+  height: 120px;
+  width: 120px;
+  margin: 0px;
+}
