@@ -2,16 +2,14 @@
 #### Created by Vittoria Erdem
 <br>
 
-### **Objective**
+### **Objective:**
 * Create an interactive bingo game that allows the player to click on the square once the number is called. After thre player gets 5 boxes in a row they can call B-I-N-G-O!
-
 <br>
 
 ### **Technology used:**
 * HTML
 * CSS
 * JavaScript
-
 <br>
 
 ### **Wireframes:**
@@ -19,16 +17,15 @@
 <br>
 
 ### **User Stories:**
-##### Blah
+* Nancy
 
 <br>
 
 ### **Features List:**
-* Draws a number
-* Shows what numbers have been previously drawn
-* JavaScript
-
-
+* Press next number to get a new bingo ball number
+* User clicks on the square with the matching number
+* Numbers Called show previously drawn numbers
+<br>
 
 ### **Stretch Goals:**
 * Automate - Draw a new number after a few seconds
