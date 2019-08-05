@@ -1,4 +1,6 @@
-/*----- constants -----*/
+/*----- app's state (variables) -----*/ 
+var count;
+
 const bingoNumber = [
     1,2,3,4,5,6,7,8,9,10,
     11,12,13,14,15,16,17,18,19,20,
@@ -9,19 +11,45 @@ const bingoNumber = [
     61,62,63,64,65,66,67,68,69,70,
     71,72,73,74,75];
 
-/*----- app's state (variables) -----*/ 
-var drawnNumber = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
-console.log(drawnNumber);
+let boardNumbers = [];
 
 /*----- cached element references -----*/ 
-
+var numDrawn = document.querySelector('h1');
+var numBoard = document.querySelector('h2');
+var input = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
 
 /*----- event listeners -----*/ 
-document.getElementById("draw-a-number").addEventListener('click', function() {
-    alert(drawnNumber);
+
+document.querySelector('#draw-a-number').addEventListener('click', function(){
+    input = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
+    numDrawn.innerText = input
 });
 
-document.getElementById("new-game").addEventListener('click', function() {
-    alert(drawnNumber);
-});
 /*----- functions -----*/
+function render() {
+  numDrawn.textContent = (count >= 0 ? '' : '') + count;
+}
+
+function init() {
+  count = input;
+  render();
+  randomBoard();
+}
+
+for (var i = 0; i < 25; i++){
+  randomBoard();
+}
+console.log(boardNumbers);
+
+function randomBoard(){
+  var randomNums = bingoNumber[Math.floor(Math.random() * bingoNumber.length)];  
+  if (boardNumbers.indexOf(randomNums) == -1)
+      boardNumbers.push(randomNums);
+  else
+       randomBoard();
+
+}
+
+numBoard.innerText = boardNumbers
+
+init();

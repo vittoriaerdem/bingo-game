@@ -17,6 +17,11 @@ body {
   margin-bottom: 10px;
 }
 
+h1 {
+font-size: 6vmin;
+margin: 5px;
+}
+
 .drawnBoard {
   font-size: 2.25vmin;
   color: black;
@@ -143,4 +148,9 @@ button {
 button:hover {
   background-color: black;
   color: white;
+}
+
+h2 {
+  font-size: 3vmin; 
+  color: purple;
 }
