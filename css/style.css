@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: grid;
   align-content: center;
@@ -7,8 +11,9 @@ body {
 }
 
 #gameName {
-  font-size: 8vmin;
+  font-size: 6vmin;
   text-align: center;
+  width: 50vmin;
 }
 
 .drawnBoard {
@@ -18,7 +23,8 @@ body {
   align-content: center;
   justify-content: center;
   border: 2px solid black;
-  text-align: left;
+  width: 50vmin;
+  border-radius: 6px;
 }
 
 .board {
@@ -30,6 +36,16 @@ body {
   text-align: center;
   grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin;
   grid-template-rows: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
+  border-radius: 6px;
+}
+
+#square1:hover, #square6:hover, #square11:hover, #square16:hover, #square21:hover, 
+#square2:hover, #square7:hover, #square12:hover, #square17:hover, #square22:hover,
+#square3:hover, #square8:hover, #square13:hover, #square18:hover, #square23:hover,
+#square4:hover, #square9:hover, #square14:hover, #square19:hover, #square24:hover,
+#square5:hover, #square10:hover, #square15:hover, #square20:hover, #square25:hover
+{
+  background-color: grey;
 }
 
 #squareB, #square1, #square6, #square11, #square16, #square21{
@@ -107,6 +123,18 @@ body {
   background-color: #8EA604;
 }
 
-.button {
+button {
   width: 100px;
+  padding: 10px 0;
+  margin-top: 50px;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
 }
