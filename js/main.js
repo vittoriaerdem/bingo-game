@@ -17,6 +17,11 @@ console.log(drawnNumber);
 
 
 /*----- event listeners -----*/ 
+document.getElementById("draw-a-number").addEventListener('click', function() {
+    alert(drawnNumber);
+});
 
-
+document.getElementById("new-game").addEventListener('click', function() {
+    alert(drawnNumber);
+});
 /*----- functions -----*/

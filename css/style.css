@@ -14,6 +14,7 @@ body {
   font-size: 6vmin;
   text-align: center;
   width: 50vmin;
+  margin-bottom: 10px;
 }
 
 .drawnBoard {
@@ -25,6 +26,11 @@ body {
   border: 2px solid black;
   width: 50vmin;
   border-radius: 6px;
+  margin-top: 10px;
+}
+
+#ballB, #ballI, #ballN, #ballG, #ballO{
+  margin: 2px;
 }
 
 .board {
@@ -45,7 +51,7 @@ body {
 #square4:hover, #square9:hover, #square14:hover, #square19:hover, #square24:hover,
 #square5:hover, #square10:hover, #square15:hover, #square20:hover, #square25:hover
 {
-  background-color: grey;
+  background-color: lightgray;
 }
 
 #squareB, #square1, #square6, #square11, #square16, #square21{
@@ -124,14 +130,14 @@ body {
 }
 
 button {
-  width: 100px;
-  padding: 10px 0;
-  margin-top: 50px;
+  width: 20vmin;
+  padding: 2vmin 2vmin;
+  margin: 1vmin 2vmin 2vmin 2vmin;
   background-color: white;
   color: black;
   border: 2px solid black;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 2vmin;
 }
 
 button:hover {
