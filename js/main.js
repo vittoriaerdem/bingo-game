@@ -2,14 +2,26 @@
 var count;
 
 const bingoNumber = [
-    1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,
-    16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
-    31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,
-    46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,
-    61,62,63,64,65,66,67,68,69,70,71,72,73,74,75];
+  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,
+  16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
+  31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,
+  46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,
+  61,62,63,64,65,66,67,68,69,70,71,72,73,74,75
+];
 
 let boardNumbers = [];
 
+let columnBNumbers = [];
+let columnINumbers = [];
+let columnNNumbers = [];
+let columnGNumbers = [];
+let columnONumbers = [];
+
+const ballB = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+const ballI = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+const ballN = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
+const ballG = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
+const ballO = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75];
 
 /*----- cached element references -----*/ 
 var numDrawn = document.querySelector('h1');
@@ -56,28 +68,77 @@ function render() {
 function init() {
   count = input;
   render();
-  randomBoard();
+  columnB();
+  columnI();
+  columnN();
+  columnG();
+  columnO();
 }
 
-for (var i = 0; i < 25; i++){
-  randomBoard();
+for (var i = 0; i < 5; i++){
+  columnB();
 }
-console.log(boardNumbers);
+console.log(columnBNumbers);
 
-function randomBoard(){
-  var randomNums = bingoNumber[Math.floor(Math.random() * bingoNumber.length)];  
-  if (boardNumbers.indexOf(randomNums) == -1)
-      boardNumbers.push(randomNums);
+function columnB(){
+  var randomNums = ballB[Math.floor(Math.random() * ballB.length)];  
+  if (columnBNumbers.indexOf(randomNums) == -1)
+      columnBNumbers.push(randomNums);
   else
-       randomBoard();
-
+  columnB();
 }
 
+for (var i = 0; i < 5; i++){
+  columnI();
+}
+console.log(columnINumbers);
 
+function columnI(){
+  var randomNums = ballI[Math.floor(Math.random() * ballI.length)];  
+  if (columnINumbers.indexOf(randomNums) == -1)
+      columnINumbers.push(randomNums);
+  else
+  columnI();
+}
 
+for (var i = 0; i < 5; i++){
+  columnN();
+}
+console.log(columnNNumbers);
 
+function columnN(){
+  var randomNums = ballN[Math.floor(Math.random() * ballN.length)];  
+  if (columnNNumbers.indexOf(randomNums) == -1)
+      columnNNumbers.push(randomNums);
+  else
+  columnN();
+}
 
+for (var i = 0; i < 5; i++){
+  columnG();
+}
+console.log(columnGNumbers);
 
+function columnG(){
+  var randomNums = ballG[Math.floor(Math.random() * ballG.length)];  
+  if (columnGNumbers.indexOf(randomNums) == -1)
+      columnGNumbers.push(randomNums);
+  else
+  columnG();
+}
+
+for (var i = 0; i < 5; i++){
+  columnO();
+}
+console.log(columnONumbers);
+
+function columnO(){
+  var randomNums = ballO[Math.floor(Math.random() * ballO.length)];  
+  if (columnONumbers.indexOf(randomNums) == -1)
+      columnONumbers.push(randomNums);
+  else
+  columnO();
+}
 
 
 
@@ -85,7 +146,7 @@ function randomBoard(){
 
 
 // use this to refactor
-// `<div id="square1">Square 1</div>`
+`<div id="square1">Square 1</div>`
 /*
 for map callback ->
 @ param number is the current item in the array
@@ -98,31 +159,31 @@ for map callback ->
 //   return currentdiv
 // })
 
-numBoard1.innerText = boardNumbers[0]// return a new array of boardNumbers[1]
-numBoard2.innerText = boardNumbers[1]
-numBoard3.innerText = boardNumbers[2]
-numBoard4.innerText = boardNumbers[3]
-numBoard5.innerText = boardNumbers[4]
-numBoard6.innerText = boardNumbers[5]
-numBoard7.innerText = boardNumbers[6]
-numBoard8.innerText = boardNumbers[7]
-numBoard9.innerText = boardNumbers[8]
-numBoard10.innerText = boardNumbers[9]
-numBoard11.innerText = boardNumbers[10]
-numBoard12.innerText = boardNumbers[11]
+numBoard1.innerText = columnBNumbers[0]// return a new array of boardNumbers[1]
+numBoard2.innerText = columnINumbers[0]
+numBoard3.innerText = columnNNumbers[0]
+numBoard4.innerText = columnGNumbers[0]
+numBoard5.innerText = columnONumbers[0]
+numBoard6.innerText = columnBNumbers[1]
+numBoard7.innerText = columnINumbers[1]
+numBoard8.innerText = columnNNumbers[1]
+numBoard9.innerText = columnGNumbers[1]
+numBoard10.innerText = columnONumbers[1]
+numBoard11.innerText = columnBNumbers[2]
+numBoard12.innerText = columnINumbers[2]
 // numBoard13.innerText = boardNumbers[12]
-numBoard14.innerText = boardNumbers[13]
-numBoard15.innerText = boardNumbers[14]
-numBoard16.innerText = boardNumbers[15]
-numBoard17.innerText = boardNumbers[16]
-numBoard18.innerText = boardNumbers[17]
-numBoard19.innerText = boardNumbers[18]
-numBoard20.innerText = boardNumbers[19]
-numBoard21.innerText = boardNumbers[20]
-numBoard22.innerText = boardNumbers[21]
-numBoard23.innerText = boardNumbers[22]
-numBoard24.innerText = boardNumbers[23]
-numBoard25.innerText = boardNumbers[24]
+numBoard14.innerText = columnGNumbers[2]
+numBoard15.innerText = columnONumbers[2]
+numBoard16.innerText = columnBNumbers[3]
+numBoard17.innerText = columnINumbers[3]
+numBoard18.innerText = columnNNumbers[3]
+numBoard19.innerText = columnGNumbers[3]
+numBoard20.innerText = columnONumbers[3]
+numBoard21.innerText = columnBNumbers[4]
+numBoard22.innerText = columnINumbers[4]
+numBoard23.innerText = columnNNumbers[4]
+numBoard24.innerText = columnGNumbers[4]
+numBoard25.innerText = columnONumbers[4]
 
 init();
 
