@@ -11,17 +11,17 @@ const bingoNumber = [
 
 let boardNumbers = [];
 
-let columnBNumbers = [];
-let columnINumbers = [];
-let columnNNumbers = [];
-let columnGNumbers = [];
-let columnONumbers = [];
-
 const ballB = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 const ballI = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
 const ballN = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
 const ballG = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
 const ballO = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75];
+
+let columnBNumbers = [];
+let columnINumbers = [];
+let columnNNumbers = [];
+let columnGNumbers = [];
+let columnONumbers = [];
 
 /*----- cached element references -----*/ 
 var numDrawn = document.querySelector('h1');
@@ -51,23 +51,23 @@ var numBoard23 = document.querySelector('#square23');
 var numBoard24 = document.querySelector('#square24');
 var numBoard25 = document.querySelector('#square25');
 
-var input = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
+var ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
 
 /*----- event listeners -----*/ 
 
 document.querySelector('#draw-a-number').addEventListener('click', function(){
-    input = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
-    numDrawn.innerText = input
+    ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
+    numDrawn.innerText = ballValue
+});
+
+document.querySelector('#new-game').addEventListener('click', function(){
+  window.location.reload()
 });
 
 /*----- functions -----*/
-function render() {
-  numDrawn.textContent = (count >= 0 ? '' : '') + count;
-}
 
 function init() {
-  count = input;
-  render();
+  count = ballValue;
   columnB();
   columnI();
   columnN();
@@ -78,7 +78,6 @@ function init() {
 for (var i = 0; i < 5; i++){
   columnB();
 }
-console.log(columnBNumbers);
 
 function columnB(){
   var randomNums = ballB[Math.floor(Math.random() * ballB.length)];  
@@ -91,7 +90,6 @@ function columnB(){
 for (var i = 0; i < 5; i++){
   columnI();
 }
-console.log(columnINumbers);
 
 function columnI(){
   var randomNums = ballI[Math.floor(Math.random() * ballI.length)];  
@@ -104,7 +102,6 @@ function columnI(){
 for (var i = 0; i < 5; i++){
   columnN();
 }
-console.log(columnNNumbers);
 
 function columnN(){
   var randomNums = ballN[Math.floor(Math.random() * ballN.length)];  
@@ -117,7 +114,6 @@ function columnN(){
 for (var i = 0; i < 5; i++){
   columnG();
 }
-console.log(columnGNumbers);
 
 function columnG(){
   var randomNums = ballG[Math.floor(Math.random() * ballG.length)];  
@@ -130,7 +126,6 @@ function columnG(){
 for (var i = 0; i < 5; i++){
   columnO();
 }
-console.log(columnONumbers);
 
 function columnO(){
   var randomNums = ballO[Math.floor(Math.random() * ballO.length)];  
@@ -139,11 +134,6 @@ function columnO(){
   else
   columnO();
 }
-
-
-
-
-
 
 // use this to refactor
 `<div id="square1">Square 1</div>`
@@ -159,30 +149,34 @@ for map callback ->
 //   return currentdiv
 // })
 
-numBoard1.innerText = columnBNumbers[0]// return a new array of boardNumbers[1]
-numBoard2.innerText = columnINumbers[0]
-numBoard3.innerText = columnNNumbers[0]
-numBoard4.innerText = columnGNumbers[0]
-numBoard5.innerText = columnONumbers[0]
+numBoard1.innerText = columnBNumbers[0]// returns an array from ColumnBNumbers
 numBoard6.innerText = columnBNumbers[1]
-numBoard7.innerText = columnINumbers[1]
-numBoard8.innerText = columnNNumbers[1]
-numBoard9.innerText = columnGNumbers[1]
-numBoard10.innerText = columnONumbers[1]
 numBoard11.innerText = columnBNumbers[2]
-numBoard12.innerText = columnINumbers[2]
-// numBoard13.innerText = boardNumbers[12]
-numBoard14.innerText = columnGNumbers[2]
-numBoard15.innerText = columnONumbers[2]
 numBoard16.innerText = columnBNumbers[3]
-numBoard17.innerText = columnINumbers[3]
-numBoard18.innerText = columnNNumbers[3]
-numBoard19.innerText = columnGNumbers[3]
-numBoard20.innerText = columnONumbers[3]
 numBoard21.innerText = columnBNumbers[4]
+
+numBoard2.innerText = columnINumbers[0]
+numBoard7.innerText = columnINumbers[1]
+numBoard12.innerText = columnINumbers[2]
+numBoard17.innerText = columnINumbers[3]
 numBoard22.innerText = columnINumbers[4]
+
+numBoard3.innerText = columnNNumbers[0]
+numBoard8.innerText = columnNNumbers[1]
+// numBoard13.innerText = boardNumbers[2]
+numBoard18.innerText = columnNNumbers[3]
 numBoard23.innerText = columnNNumbers[4]
+
+numBoard4.innerText = columnGNumbers[0]
+numBoard9.innerText = columnGNumbers[1]
+numBoard14.innerText = columnGNumbers[2]
+numBoard19.innerText = columnGNumbers[3]
 numBoard24.innerText = columnGNumbers[4]
+
+numBoard5.innerText = columnONumbers[0]
+numBoard10.innerText = columnONumbers[1]
+numBoard15.innerText = columnONumbers[2]
+numBoard20.innerText = columnONumbers[3]
 numBoard25.innerText = columnONumbers[4]
 
 init();
@@ -305,7 +299,27 @@ function changeColor24() {
   document.getElementById("square24").style.color= "white";
 }
 
-function changeColor25() {
+//////////////////////////////////////////////////////////////////////////
+
+//Testing the click-unclick Event Listeners
+
+
+function changeToBlack() {
   document.getElementById("square25").style.backgroundColor= "black";
   document.getElementById("square25").style.color= "white";
 }
+
+function changeToWhite() {
+  document.getElementById("square25").style.backgroundColor= "white";
+  document.getElementById("square25").style.color= "black";
+}
+
+document.getElementById("square25").addEventListener("click", changeToBlack);
+document.getElementById("square25").removeEventListener("click", changeToWhite);
+
+
+//////////////////////////////////////////////////////////////////////////
+
+//Testing the bingo ball color
+
+// if ballValue = 

@@ -3,7 +3,8 @@
 }
 
 body {
-  display: grid;
+  display: flex;
+  flex-direction: row;
   align-content: center;
   justify-content: center;
   font-family: Boogaloo, cursive;
@@ -25,7 +26,6 @@ margin: 5px;
 .drawnBoard {
   font-size: 2.25vmin;
   color: black;
-  display: grid;
   align-content: center;
   justify-content: center;
   border: 2px solid black;
@@ -59,78 +59,46 @@ margin: 5px;
   background-color: lightgray;
 }
 
-#squareB, #square1, #square6, #square11, #square16, #square21{
-  font-size: 2.5vh;
+#squareB, #square1, #square6, #square11, #square16, #square21, 
+#squareI, #square2, #square7, #square12, #square17, #square22, 
+#squareN, #square3, #square8, #square13, #square18, #square23,
+#squareG, #square4, #square9, #square14, #square19, #square24, 
+#squareO, #square5, #square10, #square15, #square20, #square25 {
+  font-size: 4vmin;
   border: 2px solid black;
   display: grid; 
   align-content: center;
-  justify-content: center;
   height: 10vmin;
   width: 10vmin;
 }
 
-#squareI, #square2, #square7, #square12, #square17, #square22{
-  font-size: 2.5vh;
-  border: 2px solid black;
-  display: grid; 
-  align-content: center;
-  justify-content: center;
-  height: 10vmin;
-  width: 10vmin;
-}
-
-#squareN, #square3, #square8, #square13, #square18, #square23{
-  font-size: 2.5vh;
-  border: 2px solid black;
-  display: grid; 
-  align-content: center;
-  justify-content: center;
-  height: 10vmin;
-  width: 10vmin;
-}
-
-#squareG, #square4, #square9, #square14, #square19, #square24{
-  font-size: 2.5vh;
-  border: 2px solid black;
-  display: grid; 
-  align-content: center;
-  justify-content: center;
-  height: 10vmin;
-  width: 10vmin;
-}
-
-#squareO, #square5, #square10, #square15, #square20, #square25{
-  font-size: 2.5vh;
-  border: 2px solid black;
-  display: grid; 
-  align-content: center;
-  justify-content: center;
-  height: 10vmin;
-  width: 10vmin;
+#square13 {
+  font-size: 3.5vmin;
+  background-color: #0E6BA8;
 }
 
 #squareB {
-  font-size: 5vmin;
+  font-size: 7vmin;
   background-color: #ED1C24;
 }
 
 #squareI {
-  font-size: 5vmin;
+  font-size: 7vmin;
   background-color: #F0A202;
 }
 
 #squareN {
-  font-size: 5vmin;
+  font-size: 7vmin;
   background-color: #F1D302;
 }
 
 #squareG {
-  font-size: 5vmin;
+  font-size: 7vmin;
   background-color: #0E6BA8;
 }
 
 #squareO {
-  font-size: 5vmin;
+  font-size: 7vmin;
   background-color: #8EA604;
 }
 
@@ -150,8 +118,20 @@ button:hover {
   color: white;
 }
 
-h2 {
-  font-size: 3vmin; 
-  color: purple;
+#bingoBallValue {
+  display: inline-block;
+}
 
+h1 {
+  font-size: 4vmin; 
+  background-color: white;
+  border: 4vmin solid #ED1C24;
+  border-radius: 50%;
+  width: 16vmin;
+  height: 16vmin;
+  margin: 8px;
+  display: grid;
+  align-items: center;  
+  justify-items: center;
+  text-align: center;
 }
