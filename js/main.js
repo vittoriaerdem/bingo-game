@@ -58,6 +58,7 @@ var ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
 document.querySelector('#draw-a-number').addEventListener('click', function(){
     ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
     numDrawn.innerText = ballValue
+    console.log(ballValue)
 });
 
 document.querySelector('#new-game').addEventListener('click', function(){

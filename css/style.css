@@ -3,51 +3,76 @@
 }
 
 body {
+  font-family: Boogaloo, cursive;
+}
+
+.test {
   display: flex;
   flex-direction: row;
-  align-content: center;
   justify-content: center;
-  font-family: Boogaloo, cursive;
+  align-content: center;
+  margin: 20px;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   text-align: center;
 }
 
-#gameName {
-  font-size: 6vmin;
-  text-align: center;
-  width: 50vmin;
-  margin-bottom: 10px;
+h2 {
+  font-size: 60px;
+  margin: 0px;
 }
 
-h1 {
-font-size: 6vmin;
-margin: 5px;
-}
-
-.drawnBoard {
-  font-size: 2.25vmin;
+.left {
+  font-size: 18px;
   color: black;
-  align-content: center;
-  justify-content: center;
   border: 2px solid black;
-  width: 50vmin;
+  width: 145px;
+  height: 330px;
   border-radius: 6px;
   margin-top: 10px;
+  padding: 2px;
 }
 
-#ballB, #ballI, #ballN, #ballG, #ballO{
-  margin: 2px;
+.right{
+  font-size: 18px;
+  color: black;
+  height: 30vmin;
+  border-radius: 6px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.board {
+.middle {
   display: grid;
   font-size: 3vh;
-  padding: 10px;
-  align-content: center;
-  justify-content: center;
+  padding: 10px 50px 10px 50px;
   text-align: center;
   grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin;
   grid-template-rows: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
   border-radius: 6px;
+}
+
+#bingoBallValue {
+  width: 20vmin;
+  margin: 1vmin 2vmin 2vmin 2vmin;
+}
+
+#title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#callSheetNums {
+  letter-spacing: -.16px;
+  line-height: 25px;
+  text-align: center;
 }
 
 #square1:hover, #square6:hover, #square11:hover, #square16:hover, #square21:hover, 
@@ -77,49 +102,32 @@ margin: 5px;
   background-color: #0E6BA8;
 }
 
-#squareB {
+#squareB, #squareI, #squareN, #squareG, #squareO {
   font-size: 7vmin;
-  background-color: #ED1C24;
 }
 
-#squareI {
-  font-size: 7vmin;
-  background-color: #F0A202;
-}
-
-#squareN {
-  font-size: 7vmin;
-  background-color: #F1D302;
-}
-
-#squareG {
-  font-size: 7vmin;
-  background-color: #0E6BA8;
-}
-
-#squareO {
-  font-size: 7vmin;
-  background-color: #8EA604;
-}
+#squareB {background-color: #ED1C24;}
+#squareI {background-color: #F0A202;}
+#squareN {background-color: #F1D302;}
+#squareG {background-color: #0E6BA8;}
+#squareO {background-color: #8EA604;}
 
 button {
   width: 20vmin;
   padding: 2vmin 2vmin;
-  margin: 1vmin 2vmin 2vmin 2vmin;
+  margin: 20px 10px 10px 10px;
   background-color: white;
   color: black;
   border: 2px solid black;
   border-radius: 6px;
-  font-size: 2vmin;
+  font-size: 20-px;
+  font-family: Boogaloo, cursive;
 }
 
 button:hover {
   background-color: black;
   color: white;
-}
-
-#bingoBallValue {
-  display: inline-block;
+  font-family: Boogaloo, cursive;
 }
 
 h1 {
@@ -135,3 +143,4 @@ h1 {
   justify-items: center;
   text-align: center;
 }
+
