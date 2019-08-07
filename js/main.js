@@ -23,20 +23,20 @@ let columnNNumbers = [];
 let columnGNumbers = [];
 let columnONumbers = [];
 
-const winArrayBCol = [#square1, #square6, #square11, #square16, #square21];
-const winArrayICol = [#square2, #square7, #square12, #square17, #square22];
-const winArrayNCol = [#square3, #square8, #square13, #square18, #square23];
-const winArrayGCol = [#square4, #square9, #square14, #square19, #square24];
-const winArrayOCol = [#square5, #square10, #square15, #square20, #square25];
+// const winArrayBCol = [#square1, #square6, #square11, #square16, #square21];
+// const winArrayICol = [#square2, #square7, #square12, #square17, #square22];
+// const winArrayNCol = [#square3, #square8, #square13, #square18, #square23];
+// const winArrayGCol = [#square4, #square9, #square14, #square19, #square24];
+// const winArrayOCol = [#square5, #square10, #square15, #square20, #square25];
 
-const winArrayRow1 = [#square1, #square2, #square3, #square4, #square5];
-const winArrayRow2 = [#square6, #square7, #square8, #square9, #square10];
-const winArrayRow3 = [#square11, #square12, #square13, #square14, #square15];
-const winArrayRow4 = [#square16, #square17, #square18, #square19, #square20];
-const winArrayRow5 = [#square21, #square22, #square23, #square24, #square25];
+// const winArrayRow1 = [#square1, #square2, #square3, #square4, #square5];
+// const winArrayRow2 = [#square6, #square7, #square8, #square9, #square10];
+// const winArrayRow3 = [#square11, #square12, #square13, #square14, #square15];
+// const winArrayRow4 = [#square16, #square17, #square18, #square19, #square20];
+// const winArrayRow5 = [#square21, #square22, #square23, #square24, #square25];
 
-const winArrayDiagB = [#square1, #square7, #square13, #square19, #square25];
-const winArrayDiagG = [#square5, #square9, #square13, #square17, #square21];
+// const winArrayDiagB = [#square1, #square7, #square13, #square19, #square25];
+// const winArrayDiagG = [#square5, #square9, #square13, #square17, #square21];
 
 /*----- cached element references -----*/ 
 var numDrawn = document.querySelector('h1');

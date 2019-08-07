@@ -1,16 +1,13 @@
 * {
   box-sizing: border-box;
-}
-
-body {
   font-family: Boogaloo, cursive;
+  align-content: center;
 }
 
 .test {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-content: center;
   margin: 20px;
 }
 
@@ -30,17 +27,17 @@ h2 {
   font-size: 18px;
   color: black;
   border: 2px solid black;
-  width: 145px;
-  height: 330px;
+  width: 200px;
+  height: 250px;
   border-radius: 6px;
-  margin-top: 10px;
+  margin-top: 140px;
   padding: 2px;
 }
 
 .right{
   font-size: 18px;
   color: black;
-  height: 30vmin;
+  height: 200px;
   border-radius: 6px;
   margin-top: 10px;
   display: flex;
@@ -50,17 +47,17 @@ h2 {
 
 .middle {
   display: grid;
-  font-size: 3vh;
+  font-size: 40px;
   padding: 10px 50px 10px 50px;
   text-align: center;
-  grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin;
-  grid-template-rows: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px;
   border-radius: 6px;
 }
 
 #bingoBallValue {
-  width: 20vmin;
-  margin: 1vmin 2vmin 2vmin 2vmin;
+  width: 200px;
+  /* margin: 10px 0px 20px 20px; */
 }
 
 #title {
@@ -89,21 +86,21 @@ h2 {
 #squareN, #square3, #square8, #square13, #square18, #square23,
 #squareG, #square4, #square9, #square14, #square19, #square24, 
 #squareO, #square5, #square10, #square15, #square20, #square25 {
-  font-size: 4vmin;
+  font-size: 40px;
   border: 2px solid black;
   display: grid; 
   align-content: center;
-  height: 10vmin;
-  width: 10vmin;
+  height: 100px;
+  width: 100px;
 }
 
 #square13 {
-  font-size: 3.5vmin;
+  font-size: 30px;
   background-color: #0E6BA8;
 }
 
 #squareB, #squareI, #squareN, #squareG, #squareO {
-  font-size: 7vmin;
+  font-size: 60px;
 }
 
 #squareB {background-color: #ED1C24;}
@@ -113,14 +110,15 @@ h2 {
 #squareO {background-color: #8EA604;}
 
 button {
-  width: 20vmin;
-  padding: 2vmin 2vmin;
-  margin: 20px 10px 10px 10px;
+  width: 150px;
+  height: 100px;
+  padding: 10px 10px;
+  margin: 20px 0px 10px 10px;
   background-color: white;
   color: black;
   border: 2px solid black;
   border-radius: 6px;
-  font-size: 20-px;
+  font-size: 20px;
   font-family: Boogaloo, cursive;
 }
 
@@ -131,13 +129,12 @@ button:hover {
 }
 
 h1 {
-  font-size: 4vmin; 
+  font-size: 40px; 
   background-color: white;
-  border: 4vmin solid #ED1C24;
+  border: 30px solid #ED1C24;
   border-radius: 50%;
-  width: 16vmin;
-  height: 16vmin;
-  margin: 8px;
+  width: 150px;
+  height: 150px;
   display: grid;
   align-items: center;  
   justify-items: center;
