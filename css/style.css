@@ -4,14 +4,16 @@
 }
 
 body {
-    background:
+    /* background:
       linear-gradient(white, transparent),
       linear-gradient(to top left, #0E6BA8, transparent),
       linear-gradient(to top right, #0E6BA8, transparent);
     background-blend-mode: screen;
-    height: 200vh;
-  }
+    height: 200vh; */
 
+    background-color: #0e6ba8;
+    background-image: url("https://www.transparenttextures.com/patterns/project-paper.png");
+  }
 
 .top {
   display: flex;
@@ -27,9 +29,10 @@ body {
 }
 
 h2 {
-  font-size: 90px;
+  font-size: 100px;
   margin: 30px;
   text-align: center;
+  -webkit-text-stroke: 1px #e4e8eb;
 }
 
 .left {

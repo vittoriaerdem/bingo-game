@@ -10,9 +10,6 @@ const bingoNumber = [
   61,62,63,64,65,66,67,68,69,70,71,72,73,74,75
 ];
 
-const round = [1,3,5,7,9,11,13,15]
-const test = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-
 // bingo values available to be assigned to each square, organized by columns
 const ballB = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 const ballI = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
@@ -42,10 +39,10 @@ let columnONumbers = [];
 // const winArrayDiagB = [#square1, #square7, #square13, #square19, #square25];
 // const winArrayDiagG = [#square5, #square9, #square13, #square17, #square21];
 
-
 /*----- cached element references -----*/ 
 // variable is a randomly selected number from the bingoNumber array
 var numDrawn = document.querySelector('h1');
+var callSheetNum = document.querySelector('h3');
 
 // displays the randomly assigned number in each square
 var numBoard1 = document.querySelector('#square1');
@@ -75,25 +72,33 @@ var numBoard24 = document.querySelector('#square24');
 var numBoard25 = document.querySelector('#square25');
 
 // variable is a randomly selected number from the bingoNumber array
-var ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
+// var ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
 
 /*----- event listeners -----*/ 
+
 
 // clicking will return a random number from the bingoNumber array
 document.querySelector('#draw-a-number').addEventListener('click', function(){
     ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
-    numDrawn.innerText = ballValue
-    console.log(ballValue)
+    numDrawn.innerText = ballValue;
+    callSheetNum.innerText = ballValue;
 
-    var i;
-
-    for (i=0;i<call1.length;i++){
-        if (ballValue === call1[i]){
-          document.querySelector("#callSheetNums").style.backgroundColor= "black";
-          console.log("match")
-        } 
-    }  
 });
+
+// var emptyArray = ballValue.push();
+// console.log(emptyArray)
+
+// <button id="draw-a-number">Draw a Number </button>
+// <button onclick="addToCallSheet()">Try it</button> 
+
+// document.getElementById("callSheetNums").appendChild(callSheetNum);
+
+
+
+
+
+
+
 
 // clicking will refresh the bag and create a new bingo board
 document.querySelector('#new-game').addEventListener('click', function(){
@@ -346,7 +351,6 @@ function changeColor25() {
   document.getElementById("square25").style.backgroundColor= "black";
   document.getElementById("square25").style.color= "white";
 }
-
 
 ////// determining matches
 // var i;

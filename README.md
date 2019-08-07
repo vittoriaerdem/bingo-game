@@ -1,6 +1,7 @@
 # **BINGO Game**
 #### Created by Vittoria Erdem
-![game play](file:///Users/vittoria/Documents/SEI/Project1/index.html)
+
+[Let's play B-I-N-G-O!](https://vittoriaerdem.github.io/bingo-game/)
 <br> 
 
 ### **Objective:**
