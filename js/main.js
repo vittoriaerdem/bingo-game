@@ -20,7 +20,6 @@ const ballN = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
 const ballG = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
 const ballO = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75];
 
-
 let columnBNumbers = [];                                                       // array for the 5 random numbers from each ballB, ballI, ballN, ballG, & ballO arrays
 let columnINumbers = [];
 let columnNNumbers = [];
@@ -378,16 +377,4 @@ function isWinner(array) {                                                      
       } 
   } 
   return false;
-}
-
-function changeBorder(){
-  if (numDrawn >= 1 && numDrawn <=15) {
-  return document.getElementById("h1").style.border= 'yellow';
-} else if {
-  (numDrawn >= 16 && numDrawn <=30)
-  return document.getElementById("h1").style.border= 'red';
-} else {
-  (numDrawn >= 0 && numDrawn <=75)
-  return document.getElementById("h1").style.border= 'black';
-}
 }

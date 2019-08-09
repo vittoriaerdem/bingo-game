@@ -85,11 +85,12 @@ h2 {
 
 #c0r0:hover, #c1r0:hover, #c2r0:hover, #c3r0:hover, #c4r0:hover, 
 #c0r1:hover, #c1r1:hover, #c2r1:hover, #c3r1:hover, #c4r1:hover, 
-#c0r2:hover, #c1r2:hover, #c2r2:hover, #c3r2:hover, #c4r2:hover, 
+#c0r2:hover, #c1r2:hover, #c3r2:hover, #c4r2:hover, 
 #c0r3:hover, #c1r3:hover, #c2r3:hover, #c3r3:hover, #c4r3:hover, 
 #c0r4:hover, #c1r4:hover, #c2r4:hover, #c3r4:hover, #c4r4:hover
 {
-  background-color: lightgray;
+  background-color: black;
+  color: whitesmoke;
   cursor: pointer;
 }
 
@@ -111,7 +112,14 @@ h2 {
 #c2r2 {
   font-size: 40px;
   background-color: #0E6BA8;
+  color: whitesmoke;
 }
+
+#c2r2:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
 
 #squareB, #squareI, #squareN, #squareG, #squareO {
   font-size: 70px;
@@ -162,6 +170,8 @@ h3 {
 
  h4 {
   text-align: center;
-  font-size: 50px;
+  font-size: 55px;
   -webkit-text-stroke: .1vmin #e4e8eb;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
