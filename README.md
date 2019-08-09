@@ -29,6 +29,7 @@
 * Automation - Draw a new number after a few seconds
 * Color Coordination - The bingo ball will have the appropriate color of the column the number belongs to (i.e. Ball #4 will be red, Ball #51 will be blue)
 * Disabling Game - Disable clicking on squares after game is won
+* Duplicate Removal - Prevent duplicate numbers from being drawn
 
 ### **Psuedocode:**
 
@@ -36,7 +37,7 @@
 * Show the bingoNumber inside a "Bingo Ball" looking div
 * Create a draw-a-number button
 * Create a new-game button
-* Click on draw-a-number button & generate a new bingoNumber
+* Click on draw-a-number button & generate a new bingoNumber & appear on the Call Sheet
 * Click on new-game button & refresh pages & regenerates new numbers the board
 * Clicking on a square changes the background color but number is still visible
 * After clicking on 5 squares in a row, column or diagonally, the player gets a win message

@@ -47,8 +47,12 @@ h2 {
   border-radius: 6px;
   margin-top: 35px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  align-content: center;
+}
+
+#bingoBallValue{
+  margin-left: 15px;
 }
 
 .board {
@@ -87,8 +91,7 @@ h2 {
 #c0r1:hover, #c1r1:hover, #c2r1:hover, #c3r1:hover, #c4r1:hover, 
 #c0r2:hover, #c1r2:hover, #c3r2:hover, #c4r2:hover, 
 #c0r3:hover, #c1r3:hover, #c2r3:hover, #c3r3:hover, #c4r3:hover, 
-#c0r4:hover, #c1r4:hover, #c2r4:hover, #c3r4:hover, #c4r4:hover
-{
+#c0r4:hover, #c1r4:hover, #c2r4:hover, #c3r4:hover, #c4r4:hover {
   background-color: black;
   color: whitesmoke;
   cursor: pointer;
@@ -141,7 +144,11 @@ button {
   border-radius: 6px;
   font-size: 30px;
   font-family: Boogaloo, cursive;
-  background-color: white;
+  display: grid;
+  align-items: center;  
+  justify-items: center;
+  text-align: center;
+  margin-left: 8px;
 }
 
 button:hover {
@@ -174,4 +181,10 @@ h3 {
   -webkit-text-stroke: .1vmin #e4e8eb;
   margin-top: 30px;
   margin-bottom: 40px;
+}
+
+h5 {
+  margin: 12px;
+  font-size: 28px;
+  line-height: 1.25;
 }

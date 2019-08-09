@@ -1,20 +1,12 @@
 /*----- app's state (variables) -----*/ 
-
-const mark = {
-  '1': '✗'
-}
-
-let board, turn, winner;
-
 const bingoNumber = [                                                          // bingo ball values available to be randomly drawn from 
-  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,
+  01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,
   16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
   31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,
   46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,
-  61,62,63,64,65,66,67,68,69,70,71,72,73,74,75
-];
+  61,62,63,64,65,66,67,68,69,70,71,72,73,74,75];
 
-const ballB = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];                          // bingo values available to be assigned to each square, organized by columns
+const ballB = [01,02,03,04,05,06,07,08,09,10,11,12,13,14,15];                          // bingo values available to be assigned to each square, organized by columns
 const ballI = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
 const ballN = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
 const ballG = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
@@ -26,10 +18,14 @@ let columnNNumbers = [];
 let columnGNumbers = [];
 let columnONumbers = [];
 
+const callSheetBoard = [];
+
+const mark = {'1': '✗'}                                                          // const that is listened for to determine clicks
+
 /*----- cached element references -----*/ 
 
 var numDrawn = document.querySelector('h1');                                      // shows a randomly drawn number 1-75 inside the "Bingo Ball" 
-var callSheetNum = document.querySelector('h3');                                  // shows a randomly drawn number 1-75 inside the call sheet
+// var callSheetNum = document.querySelector('h3');                                  // shows a randomly drawn number 1-75 inside the call sheet
 var callSheetHistory = document.querySelector('h5');
 let msg = document.getElementById('msg');                                         // shows whether the user should draw again or won
 
@@ -62,10 +58,11 @@ var numBoard25 = document.querySelector('#c4r4');
 
 document.querySelector('#draw-a-number').addEventListener('click', function(){      //clicking will return a random number from the bingoNumber array
     ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
+    callSheetBoard.push(" " + ballValue);
+    callSheetBoard.sort(function(a, b){return a-b})
     numDrawn.innerText=ballValue;
-    callSheetNum.innerText=ballValue;
+    callSheetHistory.innerText=callSheetBoard;
 });
-
 
 document.querySelector('#new-game').addEventListener('click', function(){      //clicking will refresh the bag and create a new bingo board
   window.location.reload()
@@ -80,7 +77,7 @@ function init() {
   columnG();
   columnO();
   board = [
-    [0,0,0,0,0],
+    [0,0,0,0,0], 
     [0,0,0,0,0],
     [0,0,0,0,0],
     [0,0,0,0,0],
@@ -150,7 +147,6 @@ function columnO(){
   columnO();
 }
 
-
 numBoard1.innerText = columnBNumbers[0]                                 // returns a random number from the columnBNumbers array
 numBoard6.innerText = columnBNumbers[1]
 numBoard11.innerText = columnBNumbers[2]
@@ -181,8 +177,6 @@ numBoard20.innerText = columnONumbers[3]
 numBoard25.innerText = columnONumbers[4]
 
 init();
-
-
 
 function changeColor1() {                                             // Clicking on the squares changes the color from white to black
   document.getElementById("c0r0").style.backgroundColor= "black";
@@ -307,10 +301,6 @@ function changeColor25() {
   document.getElementById("c4r4").style.color= "white";
 }
 
-/*----- event listeners -----*/ 
-document.querySelector('.board').addEventListener('click', handleClick);
-
-/*----- functions -----*/
 function handleClick(evt) {
   col = parseInt(evt.target.id.charAt(1));
   row = parseInt(evt.target.id.charAt(3));
