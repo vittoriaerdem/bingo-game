@@ -3,33 +3,27 @@
 
 ### **How To Play:**
 * Click Draw a Number to randomly drawn a Bingo Ball. Click on the BINGO board square to mark the board. Win by getting 5 in a row, column or diagonally. [Play now!](https://vittoriaerdem.github.io/bingo-game/)
-<br> 
 
 ### **Objective:**
 * Create an interactive bingo game that allows the player to click on the square once the number is called. After thre player gets 5 boxes in a row they can call B-I-N-G-O!
-<br>
 
 ### **Technology used:**
 * HTML, CSS & JavaScript
-<br>
 
 ### **Wireframes:**
 ![bingo-wireframe](imgs/bingo-wireframe1.png)
 ![bingo-final](imgs/bingo-final1.png)
-<br>
 
 ### **User Stories:**
 * As a user (AAU) I want an interactive bingo experience
 * AAU I want the drawn number to randomly be selected
 * AAU I want the numbers to be randomly assigned in the board
 * AAU I want the numbers to be organized by columns, B: 1-15, I: 16-30, N: 31-45, G: 46-60, O: 61-75
-<br>
 
 ### **Features List:**
 * Each column of B-I-N-G-O has randomly assigned numbers
 * Clicking "Next Number" shows a randomly selected number from 1-75
 * Clicking on a bingo square changes the color.
-<br>
 
 ### **Stretch Goals:**
 * Automation - Draw a new number after a few seconds
