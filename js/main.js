@@ -68,6 +68,8 @@ document.querySelector('#new-game').addEventListener('click', function(){      /
   window.location.reload()
 });
 
+document.querySelector('.board').addEventListener('click', handleClick);
+
 /*----- functions -----*/
 
 function init() {

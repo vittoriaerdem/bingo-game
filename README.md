@@ -26,6 +26,7 @@
 * Clicking on a bingo square changes the color.
 
 ### **Stretch Goals:**
+* Animation - Bingo ball will rotate when new number is drawn
 * Automation - Draw a new number after a few seconds
 * Color Coordination - The bingo ball will have the appropriate color of the column the number belongs to (i.e. Ball #4 will be red, Ball #51 will be blue)
 * Disabling Game - Disable clicking on squares after game is won
