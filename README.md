@@ -19,10 +19,9 @@
 
 ### **User Stories:**
 * As a user (AAU) I want an interactive bingo experience
-* AAU I want the numbers to randomly be selected
+* AAU I want the drawn number to randomly be selected
+* AAU I want the numbers to be randomly assigned in the board
 * AAU I want the numbers to be organized by columns, B: 1-15, I: 16-30, N: 31-45, G: 46-60, O: 61-75
-* AAU I want to be able to click on the Bingo squares as a number is drawn
-* AAU I want the numbers to be randomly assigned 
 <br>
 
 ### **Features List:**
