@@ -1,13 +1,12 @@
 /*----- app's state (variables) -----*/ 
 
-const ICONS = {
+const mark = {
   '1': '✗'
 }
 
 let board, turn, winner;
 
-// bingo ball values available to be randomly drawn from 
-const bingoNumber = [
+const bingoNumber = [                                                          // bingo ball values available to be randomly drawn from 
   1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,
   16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
   31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,
@@ -15,33 +14,27 @@ const bingoNumber = [
   61,62,63,64,65,66,67,68,69,70,71,72,73,74,75
 ];
 
-// bingo values available to be assigned to each square, organized by columns
-const ballB = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+const ballB = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];                          // bingo values available to be assigned to each square, organized by columns
 const ballI = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
 const ballN = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
 const ballG = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
 const ballO = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75];
 
-// array for the 5 random numbers from each ballB, ballI, ballN, ballG, & ballO arrays
-let columnBNumbers = [];
+
+let columnBNumbers = [];                                                       // array for the 5 random numbers from each ballB, ballI, ballN, ballG, & ballO arrays
 let columnINumbers = [];
 let columnNNumbers = [];
 let columnGNumbers = [];
 let columnONumbers = [];
 
-let callSheetHistory = [];
-
 /*----- cached element references -----*/ 
 
+var numDrawn = document.querySelector('h1');                                      // shows a randomly drawn number 1-75 inside the "Bingo Ball" 
+var callSheetNum = document.querySelector('h3');                                  // shows a randomly drawn number 1-75 inside the call sheet
+var callSheetHistory = document.querySelector('h5');
+let msg = document.getElementById('msg');                                         // shows whether the user should draw again or won
 
-
-// shows the randomly drawn number inside the "Bingo Ball" and Call Sheet
-var numDrawn = document.querySelector('h1');
-var callSheetNum = document.querySelector('h3');
-let msg = document.getElementById('msg');
-
-// displays the randomly assigned number in each square
- var numBoard1 = document.querySelector('#c0r0');
+ var numBoard1 = document.querySelector('#c0r0');                                 // displays the randomly assigned number in each square
  var numBoard2 = document.querySelector('#c1r0');
  var numBoard3 = document.querySelector('#c2r0');
  var numBoard4 = document.querySelector('#c3r0');
@@ -66,18 +59,16 @@ var numBoard22 = document.querySelector('#c1r4');
 var numBoard23 = document.querySelector('#c2r4');
 var numBoard24 = document.querySelector('#c3r4');
 var numBoard25 = document.querySelector('#c4r4');
-
 /*----- event listeners -----*/ 
 
-// clicking will return a random number from the bingoNumber array
-document.querySelector('#draw-a-number').addEventListener('click', function(){
+document.querySelector('#draw-a-number').addEventListener('click', function(){      //clicking will return a random number from the bingoNumber array
     ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
-    numDrawn.innerText = ballValue;
+    numDrawn.innerText=ballValue;
     callSheetNum.innerText=ballValue;
 });
 
-// clicking will refresh the bag and create a new bingo board
-document.querySelector('#new-game').addEventListener('click', function(){
+
+document.querySelector('#new-game').addEventListener('click', function(){      //clicking will refresh the bag and create a new bingo board
   window.location.reload()
 });
 
@@ -100,7 +91,7 @@ function init() {
   render();
 }
 
-for (var i = 0; i < 5; i++){     // returns 5 random numbers from the Column B array
+for (var i = 0; i < 5; i++){                                                          // returns 5 random numbers from the Column B array
   columnB();
 }
 
@@ -112,7 +103,7 @@ function columnB(){
   columnB();
 } 
 
-for (var i = 0; i < 5; i++){     // returns 5 random numbers from the Column I array
+for (var i = 0; i < 5; i++){                                                          // returns 5 random numbers from the Column I array
   columnI();
 }
 
@@ -124,7 +115,7 @@ function columnI(){
   columnI();
 }
 
-for (var i = 0; i < 5; i++){     // returns 5 random numbers from the Column N array
+for (var i = 0; i < 5; i++){                                                          // returns 5 random numbers from the Column N array
   columnN();
 }
 
@@ -136,7 +127,7 @@ function columnN(){
   columnN();
 }
 
-for (var i = 0; i < 5; i++){     // returns 5 random numbers from the Column G array
+for (var i = 0; i < 5; i++){                                                          // returns 5 random numbers from the Column G array
   columnG();
 }
 
@@ -148,7 +139,7 @@ function columnG(){
   columnG();
 }
 
-for (var i = 0; i < 5; i++){     // returns 5 random numbers from the Column O array
+for (var i = 0; i < 5; i++){                                                          // returns 5 random numbers from the Column O array
   columnO();
 }
 
@@ -161,31 +152,30 @@ function columnO(){
 }
 
 
-numBoard1.innerText = columnBNumbers[0]// returns a random number from the columnBNumbers array
+numBoard1.innerText = columnBNumbers[0]                                 // returns a random number from the columnBNumbers array
 numBoard6.innerText = columnBNumbers[1]
 numBoard11.innerText = columnBNumbers[2]
 numBoard16.innerText = columnBNumbers[3]
 numBoard21.innerText = columnBNumbers[4]
 
-numBoard2.innerText = columnINumbers[0]// returns a random number from the columnINumbers array
+numBoard2.innerText = columnINumbers[0]                                 // returns a random number from the columnINumbers array
 numBoard7.innerText = columnINumbers[1]
 numBoard12.innerText = columnINumbers[2]
 numBoard17.innerText = columnINumbers[3]
 numBoard22.innerText = columnINumbers[4]
 
-numBoard3.innerText = columnNNumbers[0]// returns a random number from the columnNNumbers array
+numBoard3.innerText = columnNNumbers[0]                                 // returns a random number from the columnNNumbers array
 numBoard8.innerText = columnNNumbers[1]
-// numBoard13.innerText = columnNNumbers[2] // free space, does not currently assign a number
 numBoard18.innerText = columnNNumbers[3]
 numBoard23.innerText = columnNNumbers[4]
 
-numBoard4.innerText = columnGNumbers[0]// returns a random number from the columnGNumbers array
+numBoard4.innerText = columnGNumbers[0]                                 // returns a random number from the columnGNumbers array
 numBoard9.innerText = columnGNumbers[1]
 numBoard14.innerText = columnGNumbers[2]
 numBoard19.innerText = columnGNumbers[3]
 numBoard24.innerText = columnGNumbers[4]
 
-numBoard5.innerText = columnONumbers[0]// returns a random number from the columnONumbers array
+numBoard5.innerText = columnONumbers[0]                                 // returns a random number from the columnONumbers array
 numBoard10.innerText = columnONumbers[1]
 numBoard15.innerText = columnONumbers[2]
 numBoard20.innerText = columnONumbers[3]
@@ -193,9 +183,9 @@ numBoard25.innerText = columnONumbers[4]
 
 init();
 
-////////Clicks in Sq 1 - 25 change the color from white to black /////
 
-function changeColor1() {
+
+function changeColor1() {                                             // Clicking on the squares changes the color from white to black
   document.getElementById("c0r0").style.backgroundColor= "black";
   document.getElementById("c0r0").style.color= "white";
 }
@@ -336,22 +326,22 @@ function render() {
   board.forEach(function(colArr, colIdx) {
       colArr.forEach(function(cell, rowIdx) {
           let div = document.getElementById(`c${colIdx}r${rowIdx}`);
-          div.style.backgroundColor = ICONS[cell];
+          div.style.backgroundColor = mark[cell];
       });
-  });
+  });                                                                          // checks to see if there is a winner
   if (winner === 'T') {
-      msg.textContent = "It's a Tie!"        
+      msg.textContent = "No winner yet"        
   } else {
-      msg.textContent = winner ? `You won!`:`Draw Again`;
+      msg.textContent = winner ? "You won!" : "Draw Again";
   }
 }
 
-function getWinner() {
+function getWinner() {                                                          // checks to see if the game has been won, if not, go again
   if (checkCols() || checkRows() || checkDiags()) {
       return turn *= -1;
   }}
 
-function checkCols() {
+function checkCols() {                                                          // checks to see if there is a winning column
   let total = [];
   board.forEach(function(colArr, colIdx) {
       total[colIdx] = 0;
@@ -362,7 +352,7 @@ function checkCols() {
   return isWinner(total);
 }
 
-function checkRows() {
+function checkRows() {                                                          // checks to see if there is a winning row
   let total = [];
   for (rowIdx = 0; rowIdx < board.length; rowIdx++) {
       total[rowIdx] = 0;
@@ -373,7 +363,7 @@ function checkRows() {
   return isWinner(total);
 }
 
-function checkDiags() {
+function checkDiags() {                                                          // checks to see if there is a winning diagonal
   let total = [];
   total[0] = board[0][0] + board[1][1] + board[2][2] + board[3][3] + board[4][4];
 
@@ -381,7 +371,7 @@ total[1] = board[4][0] + board[3][1] + board[2][2] + board[1][3] + board[0][4];
   return isWinner(total);
 }
 
-function isWinner(array) {
+function isWinner(array) {                                                          // checks to see if there is a 5 squares selected in the row/column/diagonal direction
   for (i = 0; i < array.length; i++) {
       if (Math.abs(array[i]) === 5) {
           return true;
@@ -390,13 +380,14 @@ function isWinner(array) {
   return false;
 }
 
-function isBoardFull() {
-  let check = []
-  let total = 0
-  board.forEach(function(colArr, colIdx) {
-      check[colIdx] = colArr.indexOf(0);
-  });
-  check.forEach(e => total += e);
-  if (total === -3) return true;
-  return false;
+function changeBorder(){
+  if (numDrawn >= 1 && numDrawn <=15) {
+  return document.getElementById("h1").style.border= 'yellow';
+} else if {
+  (numDrawn >= 16 && numDrawn <=30)
+  return document.getElementById("h1").style.border= 'red';
+} else {
+  (numDrawn >= 0 && numDrawn <=75)
+  return document.getElementById("h1").style.border= 'black';
+}
 }
