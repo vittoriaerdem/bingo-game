@@ -15,6 +15,7 @@
 
 ### **Wireframes:**
 ![bingo-wireframe](imgs/bingo-wireframe1.png)
+![bingo-final](imgs/bingo-final1.png)
 <br>
 
 ### **User Stories:**
