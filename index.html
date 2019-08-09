@@ -21,142 +21,61 @@
   <div class = "game">
   <div class="left">
       <div id="title"> Call Sheet</div>
-      <div id="callSheetNums"> 
-          <h3></h3>
-          <!-- <span id="call1">1</span>
-          <span id="call2">2</span>
-          <span id="call3">3</span>
-          <span id="call4">4</span>
-          <span id="call5">5</span>
-          <br>
-          <span id="call6">6</span>
-          <span id="call7">7</span>
-          <span id="call8">8</span>
-          <span id="call9">9</span>
-          <span id="call10">10</span>
-          <br>
-          <span id="call11">11</span>
-          <span id="call12">12</span>
-          <span id="call13">13</span>
-          <span id="call14">14</span>
-          <span id="call15">15</span>
-          <br>
-          <span id="call16">16</span>
-          <span id="call17">17</span>
-          <span id="call18">18</span>
-          <span id="call19">19</span>
-          <span id="call20">20</span>
-          <br>
-          <span id="call21">21</span>
-          <span id="call22">22</span>
-          <span id="call23">23</span>
-          <span id="call24">24</span>
-          <span id="call25">25</span>
-          <br>
-          <span id="call26">26</span>
-          <span id="call27">27</span>
-          <span id="call28">28</span>
-          <span id="call29">29</span>
-          <span id="call30">30</span>
-          <br>
-          <span id="call31">31</span>
-          <span id="call32">32</span>
-          <span id="call33">33</span>
-          <span id="call34">34</span>
-          <span id="call35">35</span>
-          <br>
-          <span id="call36">36</span>
-          <span id="call37">37</span>
-          <span id="call38">38</span>
-          <span id="call39">39</span>
-          <span id="call40">40</span>
-          <br>
-          <span id="call41">41</span>
-          <span id="call42">42</span>
-          <span id="call43">43</span>
-          <span id="call44">44</span>
-          <span id="call45">45</span>
-          <br>
-          <span id="call46">46</span>
-          <span id="call47">47</span>
-          <span id="call48">48</span>
-          <span id="call49">49</span>
-          <span id="call50">50</span>
-          <br>
-          <span id="call51">51</span>
-          <span id="call52">52</span>
-          <span id="call53">53</span>
-          <span id="call54">54</span>
-          <span id="call55">55</span>
-          <br>
-          <span id="call56">56</span>
-          <span id="call57">57</span>
-          <span id="call58">58</span>
-          <span id="call59">59</span>
-          <span id="call60">60</span>
-          <br>
-          <span id="call61">61</span>
-          <span id="call62">62</span>
-          <span id="call63">63</span>
-          <span id="call64">64</span>
-          <span id="call65">65</span>
-          <br>
-          <span id="call66">66</span>
-          <span id="call67">67</span>
-          <span id="call68">68</span>
-          <span id="call69">69</span>
-          <span id="call70">70</span>
-          <br>
-          <span id="call71">71</span>
-          <span id="call72">72</span>
-          <span id="call73">73</span>
-          <span id="call74">74</span>
-          <span id="call75">75</span> -->
-        </div>
+        <h3></h3>
+        <h5></h5>
   </div>
 
-
   <div class="middle">
+      <section class="board">
       <div id="squareB">B</div>
       <div id="squareI">I</div>
       <div id="squareN">N</div>
       <div id="squareG">G</div>
       <div id="squareO">O</div>
-      <div id="square1" onclick="changeColor1()">Square 1</div>
-      <div id="square2" onclick="changeColor2()">Square 2</div>
-      <div id="square3" onclick="changeColor3()">Square 3</div>
-      <div id="square4" onclick="changeColor4()">Square 4</div>
-      <div id="square5" onclick="changeColor5()">Square 5</div>
-      <div id="square6" onclick="changeColor6()">Square 6</div>
-      <div id="square7" onclick="changeColor7()">Square 7</div>
-      <div id="square8" onclick="changeColor8()">Square 8</div>
-      <div id="square9" onclick="changeColor9()">Square 9</div>
-      <div id="square10" onclick="changeColor10()">Square 10</div>
-      <div id="square11" onclick="changeColor11()">Square 11</div>
-      <div id="square12" onclick="changeColor12()">Square 12</div>
-      <div id="square13" onclick="changeColor13()">FREE</div>
-      <div id="square14" onclick="changeColor14()">Square 14</div>
-      <div id="square15" onclick="changeColor15()">Square 15</div>
-      <div id="square16" onclick="changeColor16()">Square 16</div>
-      <div id="square17" onclick="changeColor17()">Square 17</div>
-      <div id="square18" onclick="changeColor18()">Square 18</div>
-      <div id="square19" onclick="changeColor19()">Square 19</div>
-      <div id="square20" onclick="changeColor20()">Square 20</div>
-      <div id="square21" onclick="changeColor21()">Square 21</div>
-      <div id="square22" onclick="changeColor22()">Square 22</div>
-      <div id="square23" onclick="changeColor23()">Square 23</div>
-      <div id="square24" onclick="changeColor24()">Square 24</div>
-      <div id="square25" onclick="changeColor25()">Square 25</div>
+
+      <div id="c0r0" onclick="changeColor1()">Square 1</div>
+      <div id="c1r0" onclick="changeColor2()">Square 2</div>
+      <div id="c2r0" onclick="changeColor3()">Square 3</div>
+      <div id="c3r0" onclick="changeColor4()">Square 4</div>
+      <div id="c4r0" onclick="changeColor5()">Square 5</div>
+
+      <div id="c0r1" onclick="changeColor6()">Square 6</div>
+      <div id="c1r1" onclick="changeColor7()">Square 7</div>
+      <div id="c2r1" onclick="changeColor8()">Square 8</div>
+      <div id="c3r1" onclick="changeColor9()">Square 9</div>
+      <div id="c4r1" onclick="changeColor10()">Square 10</div>
+      
+      <div id="c0r2" onclick="changeColor11()">Square 11</div>
+      <div id="c1r2" onclick="changeColor12()">Square 12</div>
+      <div id="c2r2" onclick="changeColor13()">FREE</div>
+      <div id="c3r2" onclick="changeColor14()">Square 14</div>
+      <div id="c4r2" onclick="changeColor15()">Square 15</div>
+
+      <div id="c0r3" onclick="changeColor16()">Square 16</div>
+      <div id="c1r3" onclick="changeColor17()">Square 17</div>
+      <div id="c2r3" onclick="changeColor18()">Square 18</div>
+      <div id="c3r3" onclick="changeColor19()">Square 19</div>
+      <div id="c4r3" onclick="changeColor20()">Square 20</div>
+
+      <div id="c0r4" onclick="changeColor21()">Square 21</div>
+      <div id="c1r4" onclick="changeColor22()">Square 22</div>
+      <div id="c2r4" onclick="changeColor23()">Square 23</div>
+      <div id="c3r4" onclick="changeColor24()">Square 24</div>
+      <div id="c4r4" onclick="changeColor25()">Square 25</div>
   </div>
 
   <div class = "right">
       <div id="bingoBallValue">
-        <h1>Go!</h1>
+        <h1 class="flip">Go!</h1>
       </div>  
-  
+ 
+      <h4 id="msg"></h4>
       <button id="draw-a-number">Draw a Number </button>
       <button id="new-game">New Game </button>
+
   </div>
 </div>
+
+
 </body>
 </html>

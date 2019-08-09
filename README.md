@@ -19,7 +19,7 @@
 <br>
 
 ### **User Stories:**
-* Nancy - 
+* As a user...
 
 <br>
 

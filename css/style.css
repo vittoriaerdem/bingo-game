@@ -4,16 +4,10 @@
 }
 
 body {
-    /* background:
-      linear-gradient(white, transparent),
-      linear-gradient(to top left, #0E6BA8, transparent),
-      linear-gradient(to top right, #0E6BA8, transparent);
-    background-blend-mode: screen;
-    height: 200vh; */
-
     background-color: #0e6ba8;
     background-image: url("https://www.transparenttextures.com/patterns/project-paper.png");
   }
+
 
 .top {
   display: flex;
@@ -58,17 +52,13 @@ h2 {
   flex-direction: column;
 }
 
-.middle {
+.board {
   display: grid;
   font-size: 40px;
   padding: 10px 50px 10px 50px;
   text-align: center;
   grid-template-columns: 110px 110px 110px 110px 110px;
   grid-template-rows: 110px 110px 110px 110px 110px 110px;
-}
-
-#bingoBallValue {
-  margin-bottom: 35px;
 }
 
 #draw-a-number {
@@ -94,21 +84,22 @@ h2 {
   letter-spacing: 8px;
 }
 
-#square1:hover, #square6:hover, #square11:hover, #square16:hover, #square21:hover, 
-#square2:hover, #square7:hover, #square12:hover, #square17:hover, #square22:hover,
-#square3:hover, #square8:hover, #square13:hover, #square18:hover, #square23:hover,
-#square4:hover, #square9:hover, #square14:hover, #square19:hover, #square24:hover,
-#square5:hover, #square10:hover, #square15:hover, #square20:hover, #square25:hover
+#c0r0:hover, #c1r0:hover, #c2r0:hover, #c3r0:hover, #c4r0:hover, 
+#c0r1:hover, #c1r1:hover, #c2r1:hover, #c3r1:hover, #c4r1:hover, 
+#c0r2:hover, #c1r2:hover, #c2r2:hover, #c3r2:hover, #c4r2:hover, 
+#c0r3:hover, #c1r3:hover, #c2r3:hover, #c3r3:hover, #c4r3:hover, 
+#c0r4:hover, #c1r4:hover, #c2r4:hover, #c3r4:hover, #c4r4:hover
 {
   background-color: lightgray;
   cursor: pointer;
 }
 
-#squareB, #square1, #square6, #square11, #square16, #square21, 
-#squareI, #square2, #square7, #square12, #square17, #square22, 
-#squareN, #square3, #square8, #square13, #square18, #square23,
-#squareG, #square4, #square9, #square14, #square19, #square24, 
-#squareO, #square5, #square10, #square15, #square20, #square25 {
+#squareB, #squareI, #squareN, #squareG, #squareO,
+#c0r0, #c1r0, #c2r0, #c3r0, #c4r0, 
+#c0r1, #c1r1, #c2r1, #c3r1, #c4r1, 
+#c0r2, #c1r2, #c2r2, #c3r2, #c4r2, 
+#c0r3, #c1r3, #c2r3, #c3r3, #c4r3, 
+#c0r4, #c1r4, #c2r4, #c3r4, #c4r4{
   font-size: 50px;
   border: 2px solid black;
   display: grid; 
@@ -166,3 +157,11 @@ h1 {
   margin: 0px;
 }
 
+h3 {
+  text-align: center;
+}
+
+ h4 {
+  text-align: center;
+  font-size: 40px;
+}

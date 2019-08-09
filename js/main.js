@@ -1,5 +1,10 @@
 /*----- app's state (variables) -----*/ 
-var count;
+
+const ICONS = {
+  '1': '✗'
+}
+
+let board, turn, winner;
 
 // bingo ball values available to be randomly drawn from 
 const bingoNumber = [
@@ -24,81 +29,52 @@ let columnNNumbers = [];
 let columnGNumbers = [];
 let columnONumbers = [];
 
-// const winArrayBCol = [#square1, #square6, #square11, #square16, #square21];
-// const winArrayICol = [#square2, #square7, #square12, #square17, #square22];
-// const winArrayNCol = [#square3, #square8, #square13, #square18, #square23];
-// const winArrayGCol = [#square4, #square9, #square14, #square19, #square24];
-// const winArrayOCol = [#square5, #square10, #square15, #square20, #square25];
-
-// const winArrayRow1 = [#square1, #square2, #square3, #square4, #square5];
-// const winArrayRow2 = [#square6, #square7, #square8, #square9, #square10];
-// const winArrayRow3 = [#square11, #square12, #square13, #square14, #square15];
-// const winArrayRow4 = [#square16, #square17, #square18, #square19, #square20];
-// const winArrayRow5 = [#square21, #square22, #square23, #square24, #square25];
-
-// const winArrayDiagB = [#square1, #square7, #square13, #square19, #square25];
-// const winArrayDiagG = [#square5, #square9, #square13, #square17, #square21];
+let callSheetHistory = [];
 
 /*----- cached element references -----*/ 
-// variable is a randomly selected number from the bingoNumber array
+
+
+
+// shows the randomly drawn number inside the "Bingo Ball" and Call Sheet
 var numDrawn = document.querySelector('h1');
 var callSheetNum = document.querySelector('h3');
+let msg = document.getElementById('msg');
 
 // displays the randomly assigned number in each square
-var numBoard1 = document.querySelector('#square1');
-var numBoard2 = document.querySelector('#square2');
-var numBoard3 = document.querySelector('#square3');
-var numBoard4 = document.querySelector('#square4');
-var numBoard5 = document.querySelector('#square5');
-var numBoard6 = document.querySelector('#square6');
-var numBoard7 = document.querySelector('#square7');
-var numBoard8 = document.querySelector('#square8');
-var numBoard9 = document.querySelector('#square9');
-var numBoard10 = document.querySelector('#square10');
-var numBoard11 = document.querySelector('#square11');
-var numBoard12 = document.querySelector('#square12');
-var numBoard13 = document.querySelector('#square13');
-var numBoard14 = document.querySelector('#square14');
-var numBoard15 = document.querySelector('#square15');
-var numBoard16 = document.querySelector('#square16');
-var numBoard17 = document.querySelector('#square17');
-var numBoard18 = document.querySelector('#square18');
-var numBoard19 = document.querySelector('#square19');
-var numBoard20 = document.querySelector('#square20');
-var numBoard21 = document.querySelector('#square21');
-var numBoard22 = document.querySelector('#square22');
-var numBoard23 = document.querySelector('#square23');
-var numBoard24 = document.querySelector('#square24');
-var numBoard25 = document.querySelector('#square25');
-
-// variable is a randomly selected number from the bingoNumber array
-// var ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
+ var numBoard1 = document.querySelector('#c0r0');
+ var numBoard2 = document.querySelector('#c1r0');
+ var numBoard3 = document.querySelector('#c2r0');
+ var numBoard4 = document.querySelector('#c3r0');
+ var numBoard5 = document.querySelector('#c4r0');
+ var numBoard6 = document.querySelector('#c0r1');
+ var numBoard7 = document.querySelector('#c1r1');
+ var numBoard8 = document.querySelector('#c2r1');
+ var numBoard9 = document.querySelector('#c3r1');
+var numBoard10 = document.querySelector('#c4r1');
+var numBoard11 = document.querySelector('#c0r2');
+var numBoard12 = document.querySelector('#c1r2');
+var numBoard13 = document.querySelector('#c2r2');
+var numBoard14 = document.querySelector('#c3r2');
+var numBoard15 = document.querySelector('#c4r2');
+var numBoard16 = document.querySelector('#c0r3');
+var numBoard17 = document.querySelector('#c1r3');
+var numBoard18 = document.querySelector('#c2r3');
+var numBoard19 = document.querySelector('#c3r3');
+var numBoard20 = document.querySelector('#c4r3');
+var numBoard21 = document.querySelector('#c0r4');
+var numBoard22 = document.querySelector('#c1r4');
+var numBoard23 = document.querySelector('#c2r4');
+var numBoard24 = document.querySelector('#c3r4');
+var numBoard25 = document.querySelector('#c4r4');
 
 /*----- event listeners -----*/ 
-
 
 // clicking will return a random number from the bingoNumber array
 document.querySelector('#draw-a-number').addEventListener('click', function(){
     ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
     numDrawn.innerText = ballValue;
-    callSheetNum.innerText = ballValue;
-
+    callSheetNum.innerText=ballValue;
 });
-
-// var emptyArray = ballValue.push();
-// console.log(emptyArray)
-
-// <button id="draw-a-number">Draw a Number </button>
-// <button onclick="addToCallSheet()">Try it</button> 
-
-// document.getElementById("callSheetNums").appendChild(callSheetNum);
-
-
-
-
-
-
-
 
 // clicking will refresh the bag and create a new bingo board
 document.querySelector('#new-game').addEventListener('click', function(){
@@ -108,12 +84,20 @@ document.querySelector('#new-game').addEventListener('click', function(){
 /*----- functions -----*/
 
 function init() {
-  count = ballValue;
   columnB();
   columnI();
   columnN();
   columnG();
   columnO();
+  board = [
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0]]
+  turn = 1;
+  winner = null;
+  render();
 }
 
 for (var i = 0; i < 5; i++){     // returns 5 random numbers from the Column B array
@@ -176,19 +160,6 @@ function columnO(){
   columnO();
 }
 
-// use this to refactor
-`<div id="square1">Square 1</div>`
-/*
-for map callback ->
-@ param number is the current item in the array
-@ param index is the index of that array
-*/
-// const bingoNumbers = boardNumbers.map((number, index) => { 
-//   let currentdiv = document.createElement('div')
-//   currentdiv.id = index + 1
-//   currentdiv.innerText = number
-//   return currentdiv
-// })
 
 numBoard1.innerText = columnBNumbers[0]// returns a random number from the columnBNumbers array
 numBoard6.innerText = columnBNumbers[1]
@@ -224,139 +195,208 @@ init();
 
 ////////Clicks in Sq 1 - 25 change the color from white to black /////
 
-
-// evt.target
-
-
-function changeColor1(evt) {
-  console.log(evt)
-  document.getElementById("square1").style.backgroundColor= "black";
-  document.getElementById("square1").style.color= "white";
+function changeColor1() {
+  document.getElementById("c0r0").style.backgroundColor= "black";
+  document.getElementById("c0r0").style.color= "white";
 }
 
 function changeColor2() {
-  document.getElementById("square2").style.backgroundColor= "black";
-  document.getElementById("square2").style.color= "white";
+  document.getElementById("c1r0").style.backgroundColor= "black";
+  document.getElementById("c1r0").style.color= "white";
 }
 
 function changeColor3() {
-  document.getElementById("square3").style.backgroundColor= "black";
-  document.getElementById("square3").style.color= "white";
+  document.getElementById("c2r0").style.backgroundColor= "black";
+  document.getElementById("c2r0").style.color= "white";
 }
 
 function changeColor4() {
-  document.getElementById("square4").style.backgroundColor= "black";
-  document.getElementById("square4").style.color= "white";
+  document.getElementById("c3r0").style.backgroundColor= "black";
+  document.getElementById("c3r0").style.color= "white";
 }
 
 function changeColor5() {
-  document.getElementById("square5").style.backgroundColor= "black";
-  document.getElementById("square5").style.color= "white";
+  document.getElementById("c4r0").style.backgroundColor= "black";
+  document.getElementById("c4r0").style.color= "white";
 }
 
 function changeColor6() {
-  document.getElementById("square6").style.backgroundColor= "black";
-  document.getElementById("square6").style.color= "white";
+  document.getElementById("c0r1").style.backgroundColor= "black";
+  document.getElementById("c0r1").style.color= "white";
 }
 function changeColor7() {
-  document.getElementById("square7").style.backgroundColor= "black";
-  document.getElementById("square7").style.color= "white";
+  document.getElementById("c1r1").style.backgroundColor= "black";
+  document.getElementById("c1r1").style.color= "white";
 }
 
 function changeColor8() {
-  document.getElementById("square8").style.backgroundColor= "black";
-  document.getElementById("square8").style.color= "white";
+  document.getElementById("c2r1").style.backgroundColor= "black";
+  document.getElementById("c2r1").style.color= "white";
 }
 
 function changeColor9() {
-  document.getElementById("square9").style.backgroundColor= "black";
-  document.getElementById("square9").style.color= "white";
+  document.getElementById("c3r1").style.backgroundColor= "black";
+  document.getElementById("c3r1").style.color= "white";
 }
 
 function changeColor10() {
-  document.getElementById("square10").style.backgroundColor= "black";
-  document.getElementById("square10").style.color= "white";
+  document.getElementById("c4r1").style.backgroundColor= "black";
+  document.getElementById("c4r1").style.color= "white";
 }
 
 function changeColor11() {
-  document.getElementById("square11").style.backgroundColor= "black";
-  document.getElementById("square11").style.color= "white";
+  document.getElementById("c0r2").style.backgroundColor= "black";
+  document.getElementById("c0r2").style.color= "white";
 }
 
 function changeColor12() {
-  document.getElementById("square12").style.backgroundColor= "black";
-  document.getElementById("square12").style.color= "white";
+  document.getElementById("c1r2").style.backgroundColor= "black";
+  document.getElementById("c1r2").style.color= "white";
 }
 function changeColor13() {
-  document.getElementById("square13").style.backgroundColor= "black";
-  document.getElementById("square13").style.color= "white";
+  document.getElementById("c2r2").style.backgroundColor= "black";
+  document.getElementById("c2r2").style.color= "white";
 }
 
 function changeColor14() {
-  document.getElementById("square14").style.backgroundColor= "black";
-  document.getElementById("square14").style.color= "white";
+  document.getElementById("c3r2").style.backgroundColor= "black";
+  document.getElementById("c3r2").style.color= "white";
 }
 
 function changeColor15() {
-  document.getElementById("square15").style.backgroundColor= "black";
-  document.getElementById("square15").style.color= "white";
+  document.getElementById("c4r2").style.backgroundColor= "black";
+  document.getElementById("c4r2").style.color= "white";
 }
 
 function changeColor16() {
-  document.getElementById("square16").style.backgroundColor= "black";
-  document.getElementById("square16").style.color= "white";
+  document.getElementById("c0r3").style.backgroundColor= "black";
+  document.getElementById("c0r3").style.color= "white";
 }
 
 function changeColor17() {
-  document.getElementById("square17").style.backgroundColor= "black";
-  document.getElementById("square17").style.color= "white";
+  document.getElementById("c1r3").style.backgroundColor= "black";
+  document.getElementById("c1r3").style.color= "white";
 }
 
 function changeColor18() {
-  document.getElementById("square18").style.backgroundColor= "black";
-  document.getElementById("square18").style.color= "white";
+  document.getElementById("c2r3").style.backgroundColor= "black";
+  document.getElementById("c2r3").style.color= "white";
 }
 
 function changeColor19() {
-  document.getElementById("square19").style.backgroundColor= "black";
-  document.getElementById("square19").style.color= "white";
+  document.getElementById("c3r3").style.backgroundColor= "black";
+  document.getElementById("c3r3").style.color= "white";
 }
 
 function changeColor20() {
-  document.getElementById("square20").style.backgroundColor= "black";
-  document.getElementById("square20").style.color= "white";
+  document.getElementById("c4r3").style.backgroundColor= "black";
+  document.getElementById("c4r3").style.color= "white";
 }
 
 function changeColor21() {
-  document.getElementById("square21").style.backgroundColor= "black";
-  document.getElementById("square21").style.color= "white";
+  document.getElementById("c0r4").style.backgroundColor= "black";
+  document.getElementById("c0r4").style.color= "white";
 }
 
 function changeColor22() {
-  document.getElementById("square22").style.backgroundColor= "black";
-  document.getElementById("square22").style.color= "white";
+  document.getElementById("c1r4").style.backgroundColor= "black";
+  document.getElementById("c1r4").style.color= "white";
 }
 
 function changeColor23() {
-  document.getElementById("square23").style.backgroundColor= "black";
-  document.getElementById("square23").style.color= "white";
+  document.getElementById("c2r4").style.backgroundColor= "black";
+  document.getElementById("c2r4").style.color= "white";
 }
 
 function changeColor24() {
-  document.getElementById("square24").style.backgroundColor= "black";
-  document.getElementById("square24").style.color= "white";
+  document.getElementById("c3r4").style.backgroundColor= "black";
+  document.getElementById("c3r4").style.color= "white";
 }
 
 function changeColor25() {
-  document.getElementById("square25").style.backgroundColor= "black";
-  document.getElementById("square25").style.color= "white";
+  document.getElementById("c4r4").style.backgroundColor= "black";
+  document.getElementById("c4r4").style.color= "white";
 }
 
-////// determining matches
-// var i;
+/*----- event listeners -----*/ 
+document.querySelector('.board').addEventListener('click', handleClick);
 
-// for (i=0;i<call1.length;i++){
-//     if (ballValue === call1[i]){
-//       document.querySelector("#callSheetNums").style.backgroundColor= "black";
-//       console.log("match")
-//     } 
+/*----- functions -----*/
+function handleClick(evt) {
+  col = parseInt(evt.target.id.charAt(1));
+  row = parseInt(evt.target.id.charAt(3));
+  if(board[col][row] === 0 && !winner) {
+      board[col][row] = turn;
+      winner = getWinner();
+  }
+  render();
+}
+
+function render() {
+  board.forEach(function(colArr, colIdx) {
+      colArr.forEach(function(cell, rowIdx) {
+          let div = document.getElementById(`c${colIdx}r${rowIdx}`);
+          div.style.backgroundColor = ICONS[cell];
+      });
+  });
+  if (winner === 'T') {
+      msg.textContent = "It's a Tie!"        
+  } else {
+      msg.textContent = winner ? `You won!`:`Draw Again`;
+  }
+}
+
+function getWinner() {
+  if (checkCols() || checkRows() || checkDiags()) {
+      return turn *= -1;
+  }}
+
+function checkCols() {
+  let total = [];
+  board.forEach(function(colArr, colIdx) {
+      total[colIdx] = 0;
+      colArr.forEach(function(cell) {
+          total[colIdx] += cell;
+      });
+  });
+  return isWinner(total);
+}
+
+function checkRows() {
+  let total = [];
+  for (rowIdx = 0; rowIdx < board.length; rowIdx++) {
+      total[rowIdx] = 0;
+      board.forEach(function(colArr) {
+          total[rowIdx] += colArr[rowIdx] 
+      });
+  }
+  return isWinner(total);
+}
+
+function checkDiags() {
+  let total = [];
+  total[0] = board[0][0] + board[1][1] + board[2][2] + board[3][3] + board[4][4];
+
+total[1] = board[4][0] + board[3][1] + board[2][2] + board[1][3] + board[0][4];
+  return isWinner(total);
+}
+
+function isWinner(array) {
+  for (i = 0; i < array.length; i++) {
+      if (Math.abs(array[i]) === 5) {
+          return true;
+      } 
+  } 
+  return false;
+}
+
+function isBoardFull() {
+  let check = []
+  let total = 0
+  board.forEach(function(colArr, colIdx) {
+      check[colIdx] = colArr.indexOf(0);
+  });
+  check.forEach(e => total += e);
+  if (total === -3) return true;
+  return false;
+}
