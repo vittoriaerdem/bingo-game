@@ -1,4 +1,4 @@
-/*----- app's state (variables) -----*/ 
+/*----- constants -----*/ 
 const bingoNumber = [                                                          // bingo ball values available to be randomly drawn from 
   01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,
   16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
@@ -6,30 +6,31 @@ const bingoNumber = [                                                          /
   46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,
   61,62,63,64,65,66,67,68,69,70,71,72,73,74,75];
 
-const ballB = [01,02,03,04,05,06,07,08,09,10,11,12,13,14,15];                          // bingo values available to be assigned to each square, organized by columns
+const ballB = [01,02,03,04,05,06,07,08,09,10,11,12,13,14,15];                  // bingo values available to be assigned to each square, organized by columns
 const ballI = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
 const ballN = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
 const ballG = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
 const ballO = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75];
 
-let columnBNumbers = [];                                                       // array for the 5 random numbers from each ballB, ballI, ballN, ballG, & ballO arrays
-let columnINumbers = [];
-let columnNNumbers = [];
-let columnGNumbers = [];
-let columnONumbers = [];
+const mark = {'1': '✗'}                                                        // const that is listened for to determine clicks
 
-const callSheetBoard = [];
+/*----- app's state (variables) -----*/ 
 
-const mark = {'1': '✗'}                                                          // const that is listened for to determine clicks
+var callSheetBoard = [];                                                       // array that stores the randomly called numbers 
+
+var columnBNumbers = [];                                                       // array for the 5 random numbers from each ballB, ballI, ballN, ballG, & ballO arrays
+var columnINumbers = [];
+var columnNNumbers = [];
+var columnGNumbers = [];
+var columnONumbers = [];
 
 /*----- cached element references -----*/ 
 
-var numDrawn = document.querySelector('h1');                                      // shows a randomly drawn number 1-75 inside the "Bingo Ball" 
-// var callSheetNum = document.querySelector('h3');                                  // shows a randomly drawn number 1-75 inside the call sheet
-var callSheetHistory = document.querySelector('h5');
-let msg = document.getElementById('msg');                                         // shows whether the user should draw again or won
+var numDrawn = document.querySelector('h1');                                    // shows a randomly drawn number 1-75 inside the "Bingo Ball" 
+var callSheetHistory = document.querySelector('h5');                            // shows a randomly drawn number 1-75 inside the call sheet
+let msg = document.getElementById('msg');                                       // shows whether the user should draw again or won
 
- var numBoard1 = document.querySelector('#c0r0');                                 // displays the randomly assigned number in each square
+ var numBoard1 = document.querySelector('#c0r0');                               // displays the randomly assigned number in each square
  var numBoard2 = document.querySelector('#c1r0');
  var numBoard3 = document.querySelector('#c2r0');
  var numBoard4 = document.querySelector('#c3r0');
@@ -54,9 +55,10 @@ var numBoard22 = document.querySelector('#c1r4');
 var numBoard23 = document.querySelector('#c2r4');
 var numBoard24 = document.querySelector('#c3r4');
 var numBoard25 = document.querySelector('#c4r4');
+
 /*----- event listeners -----*/ 
 
-document.querySelector('#draw-a-number').addEventListener('click', function(){      //clicking will return a random number from the bingoNumber array
+document.querySelector('#draw-a-number').addEventListener('click', function(){    //clicking will return a random number from the bingoNumber array
     ballValue = bingoNumber[Math.floor(Math.random()*bingoNumber.length)];
     callSheetBoard.push(" " + ballValue);
     callSheetBoard.sort(function(a, b){return a-b})
@@ -64,7 +66,7 @@ document.querySelector('#draw-a-number').addEventListener('click', function(){  
     callSheetHistory.innerText=callSheetBoard;
 });
 
-document.querySelector('#new-game').addEventListener('click', function(){      //clicking will refresh the bag and create a new bingo board
+document.querySelector('#new-game').addEventListener('click', function(){          //clicking will refresh the bag and create a new bingo board
   window.location.reload()
 });
 
