@@ -189,6 +189,7 @@ h5 {
   line-height: 1.25;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @media only screen and (max-width: 768px){
   body {
     background-color: #0e6ba8;
@@ -220,7 +221,7 @@ h5 {
   }
 
   .right{
-    font-size: 18px;
+    font-size: 16gpx;
     color: black;
     height: 200px;
     border-radius: 6px;
@@ -311,13 +312,12 @@ h5 {
 
   button {
     width: 100px;
-    height: 130px;
-    padding: 5px 5px;
+    height: 200px;
     background-color: white;
     color: black;
     border: 2px solid black;
     border-radius: 6px;
-    font-size: 15px;
+    font-size: 12px;
     font-family: Boogaloo, cursive;
     margin-left: 8px;
   }
