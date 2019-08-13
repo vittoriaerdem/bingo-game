@@ -6,6 +6,7 @@
 body {
     background-color: #0e6ba8;
     background-image: url("https://www.transparenttextures.com/patterns/project-paper.png");
+    
   }
 
 .top {
@@ -189,14 +190,13 @@ h5 {
   line-height: 1.25;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @media only screen and (max-width: 768px){
   body {
     background-color: #0e6ba8;
     background-image: url("https://www.transparenttextures.com/patterns/project-paper.png");
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 50px 200px auto;
+    grid-template-rows: 50px 300px auto;
   }
 
   .top {
@@ -206,12 +206,8 @@ h5 {
     margin-top: 50px;
   }
 
-  .game {
-    margin: 20px;
-  }
-
   h2 {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     -webkit-text-stroke: 1px #e4e8eb;
   }
@@ -221,15 +217,11 @@ h5 {
   }
 
   .right{
-    font-size: 16gpx;
+    font-size: 18px;
     color: black;
     height: 200px;
     border-radius: 6px;
     margin-top: 10px;
-  }
-
-  #bingoBallValue{
-    margin-left: 15px;
   }
 
   .board {
@@ -312,12 +304,13 @@ h5 {
 
   button {
     width: 100px;
-    height: 200px;
+    height: 130px;
+    padding: 5px 5px;
     background-color: white;
     color: black;
     border: 2px solid black;
     border-radius: 6px;
-    font-size: 12px;
+    font-size: 15px;
     font-family: Boogaloo, cursive;
     margin-left: 8px;
   }
